@@ -1,0 +1,122 @@
+///SASS imports
+
+.hotel {
+  position: relative;
+
+  background-color: #00000000;
+  min-height: 33.6rem;
+  min-width: 32.3rem;
+  border-radius: 9px;
+  box-shadow: 0 0.45rem 7rem rgba(0, 0, 0, 0.38);
+
+  &__name {
+    background-color: #f47373;
+    position: relative;
+    top: 10.2%;
+    min-width: 21rem;
+    font-size: 1.5rem;
+    border-radius: 1.5px;
+    padding-left: 1rem;
+    padding-right: 3rem;
+
+    margin-left: -0.5rem;
+    box-shadow: 0 0.45rem 7rem rgba(0, 0, 0, 0.3);
+  }
+
+  &__image {
+    background-color: rgba(255, 250, 250, 0.45);
+    border-radius: 9px;
+    height: 24rem;
+    &-logo {
+      position: relative;
+      top: 66%;
+      width: 3rem;
+      left: 85%;
+    }
+  }
+
+  &__description {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    max-height: 12.3rem;
+    font-size: 1.2rem;
+    &-lines {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      height: 9rem;
+      margin: 0 1.5rem 1rem 1.5rem;
+      width: 15rem;
+    }
+    &-line {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      align-items: center;
+      &__logo {
+        background-color: rgb(45 44 44 / 72%);
+        padding: 0.6rem;
+        border-radius: 6px;
+        height: 3.6rem;
+        margin-bottom: -2.1rem;
+        text-align: center;
+      }
+
+      &__bullet {
+        font-size: 1.4rem;
+        color: rgba(0, 0, 0, 0.64);
+        margin-right: 0.6rem;
+        &-value {
+          color: #f47373;
+          background-color: rgba(0, 0, 0, 0.11);
+          padding: 0.6rem;
+          border-radius: 3px;
+        }
+      }
+    }
+
+    &-rate {
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      background-color: #81808091;
+      box-shadow: 0 0.45rem 2.1rem rgba(0, 0, 0, 0.27);
+
+      border-radius: 9px;
+      display: flex;
+      margin: 0.72rem 1.5rem;
+      width: 5.5rem;
+      align-items: center;
+      justify-content: space-evenly;
+      &__value {
+        font-size: 1.5rem;
+        padding-top: 0.5rem;
+        color: #fcfb77;
+      }
+      &__tag {
+        border-radius: 9px;
+        background-color: #d26363;
+        padding: 1rem 0.8rem;
+      }
+    }
+    &-amenities {
+      display: flex;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      align-items: center;
+
+      &__amenity {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+  }
+}

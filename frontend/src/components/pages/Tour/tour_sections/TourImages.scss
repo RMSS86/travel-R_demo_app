@@ -1,0 +1,104 @@
+$imager-width-big: 54rem;
+$imager-border-all: 25px;
+$imager-border-inner: 9px;
+$imager-bg-dark: #272626;
+$imager-bg-light: #ffffffe8;
+.images {
+  border-radius: $imager-border-all;
+  background-color: $imager-bg-dark;
+  overflow: hidden;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  height: 69rem;
+  margin: 2.3rem 1.8rem;
+  width: 100%;
+  padding: 3rem;
+  box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.2117647059);
+  justify-content: left;
+  &__title-block {
+    padding: 1.6rem 2.2rem;
+    background-color: #2928289c;
+    border-radius: 21px;
+    padding-left: 21%;
+    box-shadow: 0 0.6rem 2.4rem #00000036;
+    &__title {
+      font-size: 3rem;
+      color: #ffffff;
+      font-weight: 300;
+    }
+    &__img {
+      height: 56%;
+      width: 106%;
+      border-radius: 0 0 25px 0;
+      margin-top: 0.6rem;
+    }
+  }
+  &__frame {
+    position: relative;
+    display: flex;
+    max-width: $imager-width-big;
+    padding: 5rem 0;
+    margin-left: 3rem;
+    margin-top: 1.8rem;
+    max-height: 49.5rem;
+  }
+  &__wrapper {
+    border-radius: $imager-border-all;
+    background-color: transparent;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 0.45rem 2rem #00000061;
+    margin-right: 2.1rem;
+  }
+  &__logo {
+    position: absolute;
+    height: 6.3rem;
+    margin: 2.4rem;
+  }
+
+  &__image {
+    max-height: 49.5rem;
+    // width: $imager-width-big;
+    border-radius: $imager-border-inner;
+    margin-bottom: -0.3rem;
+    box-shadow: 0 0.45rem 2rem $imager-bg-dark;
+    width: 81rem;
+  }
+  &__footer {
+    margin-top: -1.2rem;
+    background-color: $imager-bg-light;
+    height: 6rem;
+    width: 81rem;
+    border-radius: 0 0 $imager-border-inner $imager-border-inner;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &__desc {
+      display: flex;
+      align-items: center;
+      & span {
+        font-size: 2.1rem;
+        font-weight: 300;
+        color: #272626;
+      }
+      &__bg-select {
+        &-dark {
+          background-color: $imager-bg-dark;
+        }
+        &-light {
+          background-color: $imager-bg-light;
+        }
+      }
+    }
+
+    &-logo {
+      height: 3.4rem;
+      margin-left: 1.5rem;
+      margin-right: 1.2rem;
+    }
+  }
+}
+
+.mrg-right-bg {
+  margin-right: 2.1rem;
+}

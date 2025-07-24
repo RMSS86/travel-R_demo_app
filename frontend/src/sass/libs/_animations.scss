@@ -1,0 +1,104 @@
+//////////////////////////////////////////
+//////////////////////////ANIMATION MIXINS
+//////////////////////////////////////////
+@mixin animationModel($mode, $timer, $timing) {
+  //fadeIn
+  animation-name: $mode;
+  animation-duration: $timer;
+  animation-timing-function: $timing; //ease-out;
+  backface-visibility: hidden;
+}
+
+@mixin animationModelB($mode, $timer, $timing, $delay) {
+  //fadeIn
+  animation-name: $mode;
+  animation-duration: $timer;
+  animation-timing-function: $timing; //ease-out;
+  backface-visibility: hidden;
+  animation-fill-mode: backwards;
+  animation-delay: $delay;
+}
+
+@mixin animationManager($mode, $timer, $timing, $delay) {
+  //fadeIn
+  animation-name: $mode;
+  animation-duration: $timer;
+  animation-timing-function: $timing; //ease-out;
+  backface-visibility: hidden;
+  animation-fill-mode: backwards;
+  animation-delay: $delay;
+}
+//Hover Animation A
+@mixin hoverFx($scaling, $toner) {
+  transition: all 1s; //justify transitions
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem $toner;
+    transform: scale($scaling);
+  }
+}
+
+///////FOR LETTERING
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  80% {
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+///////FOR BUTTON
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(4px);
+  }
+}
+
+@keyframes slide-in-from-top {
+  0% {
+    transform: translateY(-15%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

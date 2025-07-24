@@ -1,0 +1,115 @@
+@use "../../../../../sass/base/themeColors";
+@use "../../../../../sass/libs/animations";
+@use "../../../../../sass/libs/mixins";
+
+/* NAVIGATION */
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  width: 100%;
+  padding-top: 5rem;
+  padding: 0 4rem;
+  z-index: 100;
+  @include animations.animationModelB(moveDown, 1.5s, ease-out, 0.3s);
+
+  &__logo {
+    height: 4.5rem;
+    transition: all 0.3s;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    font-size: 2rem;
+
+    padding: 2.1rem;
+    border-radius: 0 0 21px 21px;
+    margin-top: -2.4rem;
+    box-shadow: 0 0.6rem 2.7rem rgba(0, 0, 0, 0.27);
+    background-color: themeColors.$colors-top-navigator-bg;
+
+    @include mixins.respond(phone-small) {
+      margin-top: 193.6rem;
+    }
+  }
+
+  &__item {
+    margin-left: 8rem;
+    color: themeColors.$color-Surface-box-light;
+    transition: all 0.3s;
+    &:is(:last-child) {
+      padding: 0 3.3rem;
+      border-radius: 1rem;
+      border: 0.3px solid currentColor !important;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      margin-right: 8rem;
+      box-shadow: 0 0.6rem 2.7rem rgba(99, 98, 98, 0.27);
+    }
+    &:hover {
+      color: themeColors.$color-surface-light;
+      transform: scale(1.1);
+    }
+
+    @include mixins.respond(tab-land) {
+      margin-left: 5rem;
+
+      &:is(:last-child) {
+        margin-right: 5rem;
+      }
+    }
+    @include mixins.respond(phone) {
+      margin-left: 3rem;
+      margin-right: 3rem;
+
+      &:is(:last-child) {
+        margin-right: 3rem;
+      }
+    }
+    @include mixins.respond(phone-small) {
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+      margin-top: 1.8rem;
+      &:is(:last-child) {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    font-size: 2rem;
+    font-weight: 400;
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  &__link--btn:link,
+  &__link--btn:visited {
+    margin-left: 20rem;
+    padding: 1.5rem 4.5rem;
+    border-radius: 3rem;
+    background-color: themeColors.$color-surface-modal-dark; //#3f3f3f65;
+    color: themeColors.$color-Surface-box-shadow-hard;
+  }
+
+  &__link--btn:hover,
+  &__link--btn:active {
+    color: inherit;
+    background-color: themeColors.$colors-regular-btn;
+    color: themeColors.$colors-regular-btn-letering;
+  }
+}
+
+/* nav and stickly class at the same time */
+.nav.sticky {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.95);
+}

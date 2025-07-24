@@ -1,0 +1,35 @@
+@use "../../../sass/libs/vars";
+@use "../../../sass/libs/mixins";
+@use "../../../sass/base/themeColors";
+
+.header {
+  // height: -1vh;
+  width: 100%;
+  border-radius: vars.$default-border-radius;
+  position: absolute;
+  z-index: 100;
+
+  // @include mixins.clipped-corner;
+  @include mixins.respond(tab-port) {
+    border-radius: 0% 0% vars.$default-border-radius vars.$default-border-radius;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+// background-image: linear-gradient(
+//     to right bottom,
+//     themeColors.$color-inverseSurface-box-shadow,
+//     themeColors.$color-surface-dark-soft
+//   ),
+//   url(../../../assets/img/trax-3.jpg);
+// // ADJUST THE AREA THE IMAGE OCCUPAIES
+// background-size: cover;
+// //ENSUERES THE IMAGE FOLLOWS THE SIZE
+// background-position: top;

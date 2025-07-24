@@ -1,0 +1,6 @@
+@use "../../../../sass//base/themeColors";
+
+.active {
+  transform: scale(1.2);
+  color: themeColors.$colors-regular-btn-letering;
+}

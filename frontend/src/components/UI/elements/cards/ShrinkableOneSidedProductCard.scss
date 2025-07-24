@@ -1,0 +1,399 @@
+@use "../../../../sass/base/themeColors";
+@use "../../../../sass/libs/grid";
+@use "../../../../sass/libs/mixins";
+@use "../../../../sass/components/row";
+
+.s-card {
+  // FUNCTIONALITY
+
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 43rem; //< SHRINK VARIABLE ORI 54rem
+  border-radius: 200px;
+  box-shadow: 0 1.5rem 4rem rgba(29, 28, 28, 0.8078431373);
+  @include mixins.respond(phone) {
+    width: 48rem;
+  }
+
+  &__side {
+    height: 43rem; //< SHRINK VARIABLE ORI 54rem
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 2rem themeColors.$color-Surface-box-shadow;
+
+    &-front {
+      //background-color: $--color-front-lettering; //#fffcfc;
+      background-color: linear-gradient(
+        to right bottom,
+        rgba(themeColors.$color-Surface-box-shadow, 0.6),
+        rgba(themeColors.$color-Surface-box-shadow, 0.6)
+      );
+      //   url(../../../../assets/branding/designs/Trax_let_backG_black_2.png);
+      // background-image: url(../../../../assets/branding/designs/Trax_let_backG_black_2.png);
+
+      // box-shadow: 0 1.5rem 4rem themeColors.$color-Surface-box-light;
+      box-shadow: 0 1.5rem 4rem themeColors.$color-Surface-box-shadow;
+    }
+
+    &-back {
+      background-size: cover;
+      transform: rotateY(180deg);
+      border-radius: 10px;
+      background-color: themeColors.$color-surface-modal-dark;
+      //   box-shadow: 0 1.5rem 4rem themeColors.$color-Surface-box-light;
+
+      &-bg {
+        background-image: url(../../../../assets/branding/designs/Trax_let_backG_black.png);
+      }
+    }
+  }
+  &:hover &__side-front {
+    // transform: rotateY(-180deg);
+    transform: scale(1.05);
+
+    //filter: drop-shadow(0 0 2em #646cffaa);
+  }
+
+  //   &:hover &__side-back {
+  //     transform: rotateY(0);
+  //     transform: scale(1.1);
+  //     filter: drop-shadow(0 0 2em #ffffffaa);
+  //   }
+
+  // FRONT SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 43rem; //< SHRINK VARIABLE ORI 54rem
+    background-blend-mode: screen;
+    // -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    // clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 1.5rem 4rem themeColors.$color-surface-modal-dark;
+    // &-img {
+    //   // background-image: url(../../../../assets/img/trax-3.jpg);
+    // }
+  }
+
+  &__heading {
+    font-size: 3.1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: themeColors.$color-branding-letter-main;
+    position: absolute;
+    top: 23rem; //< SHRINK VARIABLE ORI 29rem
+    right: 1rem;
+    width: 75%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &-img {
+      background-image: themeColors.$color-branding-letter-main;
+    }
+  }
+
+  &__details {
+    padding: 1rem;
+    pointer-events: none;
+    color: themeColors.$color-surface-modal-dark;
+    background-color: #393838e3;
+
+    &-go {
+      position: absolute;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: row;
+
+      height: 9.3rem;
+      width: 13rem;
+      top: 67%; //< SHRINK VARIABLE ORI 72%
+      right: 5%;
+      border-radius: 12px;
+      background-color: rgba(29, 28, 28, 0.8078431373);
+      box-shadow: 0 0.45rem 2.1rem rgba(0, 0, 0, 0.27);
+      margin-right: -3rem;
+      justify-content: start;
+      padding: 0.45rem;
+
+      &_left {
+        width: 5rem;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        background-color: rgba(19, 168, 121, 0);
+        align-items: center;
+        &-bit {
+          height: 3rem;
+          margin-right: 0.6rem;
+          // background-color:rgba(19, 168, 121, 0.57);
+          & img {
+            width: 2.7rem;
+          }
+        }
+      }
+
+      &_right {
+        background-color: #14c18b; //#19FDB5;
+        width: 6rem;
+
+        border-radius: 12px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 0.45rem 2.1rem rgba(0, 0, 0, 0.27);
+
+        & img {
+          width: 4.5rem;
+          border-radius: 50%;
+          box-shadow: 0 0.45rem 2.1rem rgba(0, 0, 0, 0.27);
+        }
+      }
+    }
+
+    &-amenities {
+      position: absolute;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      height: 12rem;
+      top: 66.3%; //< SHRINK VARIABLE ORI 74.3%
+      width: 4.5rem;
+      right: 36%;
+      border-radius: 12px;
+      background-color: #d1caca12;
+      box-shadow: 0 0.45rem 2.1rem rgba(0, 0, 0, 0.27);
+
+      &_amenity {
+      }
+    }
+
+    &-deal {
+      position: absolute;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      height: 9rem;
+      top: 1%;
+      width: 6rem;
+      right: 1%;
+      border-radius: 12px;
+      background-color: rgb(209 202 202 / 10%);
+      box-shadow: 0 0.45rem 2.1rem rgba(0, 0, 0, 0.27);
+      &_title {
+      }
+      &_logo {
+      }
+    }
+
+    ul {
+      list-style: none;
+      width: 90%;
+      // margin: 0 auto;
+
+      li {
+        text-align: left;
+        font-size: 1.5rem;
+        padding: 1.2rem;
+
+        &:not(:last-child) {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  &__description {
+    // font-weight: bold;
+    font-size: 1.5rem;
+    //border: 1px solid #ccc;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    background-color: #38373786;
+    color: #d4d4d4;
+    box-shadow: 0 1.5rem 4rem themeColors.$color-surface-modal-dark;
+  }
+
+  &__description--liner {
+    color: themeColors.$color-branding-letter-main;
+  }
+  // FRONT SIDE STYLING
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__price-box {
+    text-align: center;
+    color: themeColors.$color-branding-letter-main;
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: themeColors.$color-branding-letter-main;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+    color: themeColors.$color-branding-letter-main;
+  }
+  /////////////////////////////
+  /// RESPONSIVENESS ON TABPORT
+  /////////////////////////////
+  //   @include mixins.respond(tab-port) {
+  //     height: auto;
+
+  //     border-radius: 10px;
+
+  //     &__side {
+  //       height: auto;
+  //       position: relative;
+
+  //       &-front {
+  //         background-color: #fffcfc;
+  //         box-shadow: 0 1.5rem 4rem themeColors.$color-surface-modal-dark;
+  //       }
+  //       ///////////////////////
+  //       &-back {
+  //         transform: rotateY(0);
+  //         border-top-left-radius: 0;
+  //         border-top-right-radius: 0;
+  //         background-color: themeColors.$color-surface-modal-dark;
+  //         box-shadow: 0 1.5rem 4rem themeColors.$color-branding-letter-main;
+
+  //         &bg {
+  //           background-image: url(../../assets/img/notTrax_A.png);
+  //         }
+  //       }
+  //     }
+
+  //     &:hover &__side--front {
+  //       transform: rotateY(0);
+  //       //transform: scale(1.1);
+  //     }
+  //     &:hover &__side--back {
+  //       transform: rotateY(0);
+  //     }
+
+  //     // FRONT SIDE STYLING
+
+  //     &__heading {
+  //       font-size: 3.1rem;
+  //       font-weight: 300;
+  //       text-transform: uppercase;
+  //       text-align: right;
+  //       color: themeColors.$color-branding-letter-main;
+  //       position: absolute;
+  //       top: 29rem;
+  //       right: 1rem;
+  //       width: 75%;
+  //     }
+
+  //     &__details {
+  //       padding: 0 3rem;
+  //       color: themeColors.$color-surface-modal-dark; //#464545; //$--color-lettering-main--footer;
+  //       ul {
+  //         list-style: none;
+  //         width: 95%;
+  //         margin: 1rem auto;
+
+  //         li {
+  //           text-align: left;
+  //           font-size: 2.5rem;
+  //           padding: 1rem;
+
+  //           &:not(:last-child) {
+  //             border-bottom: none;
+  //           }
+  //         }
+  //       }
+  //     }
+
+  //     &__description {
+  //       // font-weight: bold;
+  //       font-size: 2rem;
+
+  //       //border: 1px solid #ccc;
+  //       padding: 0.25rem 0.75rem;
+  //       border-radius: 6px;
+  //       background-color: #252525a9;
+  //       color: #fffcfc;
+  //       box-shadow: 0 1.5rem 4rem rgba(themeColors.$color-surface-modal-dark, 0.1);
+  //     }
+
+  //     // FRONT SIDE STYLING
+  //     &__cta {
+  //       position: fixed;
+  //       top: 0%;
+  //       left: 0;
+  //       transform: translate(0);
+  //       width: 100%;
+  //       padding: 4rem 4rem 4rem 4rem;
+  //       box-shadow: 1.5rem 0 4rem rgba(themeColors.$color-surface-modal-dark, 0.2);
+  //     }
+
+  //     &__price-box {
+  //       margin-bottom: 3rem;
+  //     }
+
+  //     &__price-only {
+  //       font-size: 1.4rem;
+  //       text-transform: uppercase;
+  //     }
+
+  //     &__price-value {
+  //       font-size: 6rem;
+  //       font-weight: 100;
+  //     }
+  //   }
+  /////////////////////////////
+}
+
+.logo-box--card {
+  position: absolute;
+  top: 3rem; //35px
+  left: 3rem; //45px
+}
+.logo--liner {
+  height: 1.5rem;
+}
+.logo-box--signature {
+  position: absolute;
+  height: 3.6rem;
+  top: 90%;
+  right: 5%;
+}
+
+.logo--front {
+  height: 54px;
+  transition: all 0.5s;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  backface-visibility: hidden;
+}
+
+.noHover {
+  pointer-events: none;
+}

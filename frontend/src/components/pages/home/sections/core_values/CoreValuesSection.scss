@@ -1,0 +1,35 @@
+@use "../../../../../sass/layout/layouts";
+
+$section-block-height: 51vh;
+$section-mediaquery-break: "tab-land";
+$section-left-wrapped-left: 64%;
+$section-left-wrapped-right: 36%;
+$section-margin-rate: 0.6rem;
+
+.core-values {
+  @include layouts.section_base(
+    $height: $section-block-height,
+    $media-query: $section-mediaquery-break
+  );
+
+  &__wrapper {
+    @include layouts.section_wrapper($media-query: $section-mediaquery-break);
+  }
+
+  &__wrapper-left {
+    @include layouts.section_wrapped(
+      $width: $section-left-wrapped-left,
+      $margin: $section-margin-rate,
+      $media-query: $section-mediaquery-break
+    );
+  }
+
+  &__wrapper-right {
+    @include layouts.section_wrapped(
+      $width: $section-left-wrapped-right,
+      $margin: $section-margin-rate,
+      $margin-left: $section-margin-rate,
+      $media-query: $section-mediaquery-break
+    );
+  }
+}

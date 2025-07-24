@@ -1,0 +1,87 @@
+@use "../libs/mixins";
+@use "../base/themeColors";
+@use "../libs/vars";
+
+// .row {
+//   max-width: vars.$grid-grid;
+//   margin: 0 auto; //to center
+
+//   ///this applis the margin but to the last one
+
+//   &:not(:last-child) {
+//     margin-bottom: vars.$gutter-vertical;
+
+//     @include mixins.respond(tab-port) {
+//       margin-bottom: vars.$gutter-vertical-small;
+//     }
+//   }
+
+//   @include mixins.respond(tab-port) {
+//     max-width: 50rem;
+//   }
+
+//   @include mixins.clearfix; ///restore the ori height
+
+//   [class^="col-"] {
+//     //include all attributes for the cal-** class
+//     float: left;
+//     &:not(:last-child) {
+//       margin-right: vars.$gutter-horizontal;
+
+//       @include mixins.respond(tab-port) {
+//         margin-right: 0;
+//         margin-bottom: vars.$gutter-vertical-small;
+//       }
+//     }
+
+//     @include mixins.respond(tab-port) {
+//       width: 100% !important;
+//     }
+//   }
+// }
+
+@mixin row(
+  $height: 15vh,
+  $maxwidth: vars.$grid-grid,
+  $marginbottom: vars.$gutter-vertical,
+  $marginbottomsmall: vars.$gutter-vertical-small,
+  $rightgutter: vars.$gutter-horizontal,
+  $marginV: 0,
+  $marginH: auto
+) {
+  max-width: $maxwidth;
+  margin: $marginV $marginH; //to center
+  height: $height;
+  ///this applis the margin but to the last one
+
+  &:not(:last-child) {
+    margin-bottom: $marginbottom;
+
+    @include mixins.respond(tab-port) {
+      margin-bottom: $marginbottomsmall;
+    }
+  }
+
+  @include mixins.respond(tab-port) {
+    // max-width: 60rem;
+  }
+
+  @include mixins.clearfix; ///restore the ori height
+
+  [class^="col-"] {
+    //include all attributes for the cal-** class
+    float: left;
+    &:not(:last-child) {
+      margin-right: $rightgutter;
+
+      @include mixins.respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $marginbottomsmall;
+      }
+    }
+
+    @include mixins.respond(tab-port) {
+      width: 100% !important;
+    }
+  }
+}

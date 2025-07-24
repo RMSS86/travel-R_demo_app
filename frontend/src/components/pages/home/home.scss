@@ -1,0 +1,62 @@
+@use "../../../sass/libs/mixins";
+@use "../../../sass/libs/vars";
+@use "../../../sass/base/themeColors";
+
+.home {
+  display: flex;
+  height: 99vh;
+  border-radius: 18px; //vars.$default-border-radius;
+  position: relative !important; //
+  z-index: 6;
+  width: 100%;
+  @include mixins.respond(big-desktop) {
+    height: 72vh;
+    width: 156%;
+  }
+  @include mixins.respond(lap-top-large) {
+    height: 72vh;
+    width: 100%;
+  }
+  @include mixins.respond(lap-top-medium) {
+    height: 81vh;
+    width: 100%;
+  }
+  @include mixins.respond(tab-land-plus) {
+    height: 99vh;
+    width: 100%;
+  }
+  @include mixins.respond(tab-land) {
+    height: 99vh;
+    width: 100%;
+  }
+
+  @include mixins.respond(tab-port) {
+    border-radius: 0% 0% vars.$default-border-radius vars.$default-border-radius;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    ///////////////////////////////HOME HEADER LAYOUT MORPHOLOGY
+    ////////////////////////////////////////////////////////////
+    @include mixins.respond(big-desktop) {
+      flex-direction: row;
+    }
+    @include mixins.respond(lap-top-medium) {
+      flex-direction: column;
+    }
+
+    @include mixins.respond(tab-land) {
+      flex-direction: column;
+    }
+  }
+}
