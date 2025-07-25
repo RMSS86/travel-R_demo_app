@@ -187,7 +187,7 @@ For this project and as a personal preference I utilize `SASS` for styling much 
 Then simply invoke the functions inside your target `.scss` class in form of `@include [name_of_class].section_wrapper([inputs_if_needed]);` simple as that, you can re-use entire layOut styles, element styles, and even animations, though you may like to use something like the amazing react library `motion.framer`, for simple animation / UI element transitions `scss` still makes a great job.
 
 > All assets were designed and created in
-> ![alt text](frontend/src/assets/branding/logo/Travel_ur_logo_letters_only_white.png)
+> ![alt text](frontend/src/assets/branding/logo/Travel_ur_logo_and_letters__white.png)
 
 <p align='center'>
   <img src="https://img.shields.io/badge/Adobe%20Illustrator-FF9A00?style=for-the-badge&logo=adobe%20illustrator&logoColor=white" />
