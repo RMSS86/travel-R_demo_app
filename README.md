@@ -25,7 +25,15 @@ This Application demostrates a Classics MERN architecture for a fulstack applica
 </p>
 
 > Branding Logo
-> ![alt text](frontend/src/assets/branding/logo/Travel_ur_logo_solid_letters_white.png) > ![alt text](frontend/src/assets/branding/logo/Travel_ur_logo_white.png)
+
+<p align='center'>
+  <a>
+
+<img src='frontend/src/assets/branding/logo/Travel_ur_logo_white.png'/>
+  <img src='frontend/src/assets/branding/logo/Travel_ur_logo_solid_letters_white.png'/>
+
+  </a>
+</p>
 
 > Some from the React.js / SASS Front_end UI (Desktop)
 > ![alt text](frontend/src/assets/repo/Travel-uR_homepage-design_desktop.png)
