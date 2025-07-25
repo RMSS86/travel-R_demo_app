@@ -41,6 +41,9 @@ This Application demostrates a Classics MERN architecture for a fulstack applica
 > Code Samples
 > Here we can see a simple reusable component that renders data inputed form an API call though an object and renders a travel top tour sections
 
+> The rendered UI
+> ![alt text](frontend/src/assets/repo/Travel_uR_hompage-toptour_section.png)
+
 ```typescript
 const ContextType = "div";
 /////COMPONENET/////COMPONENET/////COMPONENET/////COMPONENET/////
@@ -95,9 +98,6 @@ type _defaultProps = {
   _onClick?: () => void;
 };
 ```
-
-> The rendered UI
-> ![alt text](frontend/src/assets/repo/Travel_uR_hompage-toptour_section.png)
 
 Here a demosntration of a `useLogOut.tsx` custom hook for loggin user out, notifies user using UI uses other custom hooks, ensures coocki data or user related data previously writen to local storage gets erased and moves user to home page after showing a notification via modal.
 
