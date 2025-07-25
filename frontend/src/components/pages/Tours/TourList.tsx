@@ -56,7 +56,7 @@ type _defaultProps = {
   _onClick?: () => void;
 };
 
-import { Tour, Tours } from "../../../models/types/types";
+import { Tour, Tours } from "../../../models/types/types"; //@ts-ignore
 import { _defaultTourDir } from "../../../utility/imports.js";
 import TwoSidedProductCard from "../../UI/elements/cards/TwoSidedProductCard";
 //////////IMPORTS//////IMPORTS//////IMPORTS//////IMPORTS//////IMPORTS//////IMPORTS/////////
